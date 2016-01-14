@@ -22,5 +22,11 @@ namespace SubtractTwoNumbersService
         {
             return "Hello World";
         }
+
+        [WebMethod]
+        public int Subtract(int a, int b)
+        {
+            return a - b;
+        }
     }
 }

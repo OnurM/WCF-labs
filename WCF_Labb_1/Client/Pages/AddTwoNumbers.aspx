@@ -10,13 +10,13 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:TextBox ID="tbxFirstNumber" runat="server" TextMode="Number"></asp:TextBox>
+        <asp:TextBox ID="tbxFirstNumber" runat="server"></asp:TextBox>
 &nbsp;+
-        <asp:TextBox ID="tbxSecondNumber" runat="server" TextMode="Number"></asp:TextBox>
+        <asp:TextBox ID="tbxSecondNumber" runat="server"></asp:TextBox>
 &nbsp;=
         <asp:Label ID="lblAddTwoNumbersResult" runat="server" Text="?"></asp:Label>
 &nbsp;
-        <asp:Button ID="btnAddTwoNumbers" runat="server" Text="Calculate!" />
+        <asp:Button ID="btnAddTwoNumbers" runat="server" OnClick="btnAddTwoNumbers_Click" Text="Calculate!" />
     
     </div>
     </form>

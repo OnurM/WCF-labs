@@ -69,7 +69,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Service References\AddThreeNumbersService\AddThreeNumbers.wsdl" />
+    <Content Include="Pages\AddThreeNumbers.aspx" />
+    <Content Include="Service References\AddThreeNumbersService\Client.AddThreeNumbersService.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AddTwoNumbersService\AddTwoNumbers.wsdl" />
+    <None Include="Service References\AddThreeNumbersService\AddThreeNumbers.disco" />
+    <None Include="Service References\AddThreeNumbersService\configuration91.svcinfo" />
+    <None Include="Service References\AddThreeNumbersService\configuration.svcinfo" />
+    <None Include="Service References\AddThreeNumbersService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\AddTwoNumbersService\Client.AddTwoNumbersService.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -111,6 +123,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddThreeNumbers.aspx.cs">
+      <DependentUpon>AddThreeNumbers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AddThreeNumbers.aspx.designer.cs">
+      <DependentUpon>AddThreeNumbers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddTwoNumbers.aspx.cs">
       <DependentUpon>AddTwoNumbers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,6 +145,11 @@
       <DependentUpon>PredictWeather.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AddThreeNumbersService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\AddTwoNumbersService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +169,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AddThreeNumbersService\" />
     <WCFMetadataStorage Include="Service References\AddTwoNumbersService\" />
     <WCFMetadataStorage Include="Service References\WeatherService\" />
   </ItemGroup>

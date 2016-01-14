@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4412BB19-2E80-4549-880A-555B9C18DD69}</ProjectGuid>
+    <ProjectGuid>{9F346803-A0BB-4B6C-B62E-10A466242E5E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Client</RootNamespace>
-    <AssemblyName>Client</AssemblyName>
+    <RootNamespace>AddTwoNumbersService</RootNamespace>
+    <AssemblyName>AddTwoNumbersService</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -48,8 +48,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -69,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Service References\WeatherService\Weather.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -78,58 +75,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
-    <Content Include="Pages\AddTwoNumbers.aspx" />
-    <Content Include="Pages\PredictWeather.aspx" />
-    <Content Include="Service References\WeatherService\Client.WeatherService.GetWeatherConditionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WeatherService\Client.WeatherService.HelloWorldResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Service References\WeatherService\Weather.disco" />
-    <None Include="Service References\WeatherService\configuration91.svcinfo" />
-    <None Include="Service References\WeatherService\configuration.svcinfo" />
-    <None Include="Service References\WeatherService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <Content Include="AddTwoNumbers.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AddTwoNumbers.aspx.cs">
-      <DependentUpon>AddTwoNumbers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\AddTwoNumbers.aspx.designer.cs">
-      <DependentUpon>AddTwoNumbers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PredictWeather.aspx.cs">
-      <DependentUpon>PredictWeather.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\PredictWeather.aspx.designer.cs">
-      <DependentUpon>PredictWeather.aspx</DependentUpon>
+    <Compile Include="AddTwoNumbers.asmx.cs">
+      <DependentUpon>AddTwoNumbers.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\WeatherService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\WeatherService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -144,9 +98,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>21940</DevelopmentServerPort>
+          <DevelopmentServerPort>31941</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:21940/</IISUrl>
+          <IISUrl>http://localhost:31941/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

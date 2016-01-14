@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 		{5B100939-8927-421A-B5E2-FF293D110EA0} = {5B100939-8927-421A-B5E2-FF293D110EA0}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddTwoNumbersService", "AddTwoNumbersService\AddTwoNumbersService.csproj", "{9F346803-A0BB-4B6C-B62E-10A466242E5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{4412BB19-2E80-4549-880A-555B9C18DD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4412BB19-2E80-4549-880A-555B9C18DD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4412BB19-2E80-4549-880A-555B9C18DD69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F346803-A0BB-4B6C-B62E-10A466242E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F346803-A0BB-4B6C-B62E-10A466242E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F346803-A0BB-4B6C-B62E-10A466242E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F346803-A0BB-4B6C-B62E-10A466242E5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,6 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 		{A77F3334-2632-45F5-988C-9E5F8E52AD80} = {A77F3334-2632-45F5-988C-9E5F8E52AD80}
 		{5B100939-8927-421A-B5E2-FF293D110EA0} = {5B100939-8927-421A-B5E2-FF293D110EA0}
 		{1FBA7690-AB6B-4D00-B366-22580B45421D} = {1FBA7690-AB6B-4D00-B366-22580B45421D}
+		{3EC4F090-1C70-43D5-BBA1-67BC94390399} = {3EC4F090-1C70-43D5-BBA1-67BC94390399}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddTwoNumbersService", "AddTwoNumbersService\AddTwoNumbersService.csproj", "{9F346803-A0BB-4B6C-B62E-10A466242E5E}"
@@ -18,6 +19,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddThreeNumbersService", "AddThreeNumbersService\AddThreeNumbersService.csproj", "{1FBA7690-AB6B-4D00-B366-22580B45421D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubtractTwoNumbersService", "SubtractTwoNumbersService\SubtractTwoNumbersService.csproj", "{A77F3334-2632-45F5-988C-9E5F8E52AD80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetNamesDayDateService", "GetNamesDayDateService\GetNamesDayDateService.csproj", "{3EC4F090-1C70-43D5-BBA1-67BC94390399}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +48,10 @@ Global
 		{A77F3334-2632-45F5-988C-9E5F8E52AD80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A77F3334-2632-45F5-988C-9E5F8E52AD80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A77F3334-2632-45F5-988C-9E5F8E52AD80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC4F090-1C70-43D5-BBA1-67BC94390399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC4F090-1C70-43D5-BBA1-67BC94390399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC4F090-1C70-43D5-BBA1-67BC94390399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC4F090-1C70-43D5-BBA1-67BC94390399}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SetupNamesDayDictionary">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetupNamesDayDictionaryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNamesDayDateByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNamesDayDateByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNamesDayDateByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SetupNamesDayDictionarySoapIn">
+    <wsdl:part name="parameters" element="tns:SetupNamesDayDictionary" />
+  </wsdl:message>
+  <wsdl:message name="SetupNamesDayDictionarySoapOut">
+    <wsdl:part name="parameters" element="tns:SetupNamesDayDictionaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNamesDayDateByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNamesDayDateByName" />
+  </wsdl:message>
+  <wsdl:message name="GetNamesDayDateByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNamesDayDateByNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GetNamesDayDateServiceSoap">
+    <wsdl:operation name="SetupNamesDayDictionary">
+      <wsdl:input message="tns:SetupNamesDayDictionarySoapIn" />
+      <wsdl:output message="tns:SetupNamesDayDictionarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNamesDayDateByName">
+      <wsdl:input message="tns:GetNamesDayDateByNameSoapIn" />
+      <wsdl:output message="tns:GetNamesDayDateByNameSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetNamesDayDateServiceSoap" type="tns:GetNamesDayDateServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetupNamesDayDictionary">
+      <soap:operation soapAction="http://tempuri.org/SetupNamesDayDictionary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNamesDayDateByName">
+      <soap:operation soapAction="http://tempuri.org/GetNamesDayDateByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetNamesDayDateServiceSoap12" type="tns:GetNamesDayDateServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetupNamesDayDictionary">
+      <soap12:operation soapAction="http://tempuri.org/SetupNamesDayDictionary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNamesDayDateByName">
+      <soap12:operation soapAction="http://tempuri.org/GetNamesDayDateByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetNamesDayDateService">
+    <wsdl:port name="GetNamesDayDateServiceSoap" binding="tns:GetNamesDayDateServiceSoap">
+      <soap:address location="http://localhost:19581/GetNamesDayDateService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetNamesDayDateServiceSoap12" binding="tns:GetNamesDayDateServiceSoap12">
+      <soap12:address location="http://localhost:19581/GetNamesDayDateService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

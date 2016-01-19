@@ -71,6 +71,7 @@
     <Content Include="packages.config" />
     <None Include="Service References\AddThreeNumbersService\AddThreeNumbers.wsdl" />
     <Content Include="Pages\AddThreeNumbers.aspx" />
+    <Content Include="Pages\GetNamesDayDate.aspx" />
     <Content Include="Pages\SubtractTwoNumbers.aspx" />
     <Content Include="Service References\AddThreeNumbersService\Client.AddThreeNumbersService.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -86,9 +87,20 @@
     <Content Include="Service References\AddTwoNumbersService\Client.AddTwoNumbersService.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\GetNamesDayDateService\Client.GetNamesDayDateService.GetNamesDayDateByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\GetNamesDayDateService\GetNamesDayDateService.disco" />
+    <None Include="Service References\GetNamesDayDateService\configuration91.svcinfo" />
+    <None Include="Service References\GetNamesDayDateService\configuration.svcinfo" />
+    <None Include="Service References\GetNamesDayDateService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\SubtractTwoNumbersService\Client.SubtractTwoNumbersService.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\GetNamesDayDateService\GetNamesDayDateService.wsdl" />
     <None Include="Service References\SubtractTwoNumbersService\SubtractTwoNumbers.wsdl" />
     <None Include="Service References\WeatherService\Weather.wsdl" />
     <None Include="Web.Debug.config">
@@ -149,6 +161,13 @@
     <Compile Include="Pages\AddTwoNumbers.aspx.designer.cs">
       <DependentUpon>AddTwoNumbers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\GetNamesDayDate.aspx.cs">
+      <DependentUpon>GetNamesDayDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GetNamesDayDate.aspx.designer.cs">
+      <DependentUpon>GetNamesDayDate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PredictWeather.aspx.cs">
       <DependentUpon>PredictWeather.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,6 +193,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\GetNamesDayDateService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SubtractTwoNumbersService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +219,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AddThreeNumbersService\" />
     <WCFMetadataStorage Include="Service References\AddTwoNumbersService\" />
+    <WCFMetadataStorage Include="Service References\GetNamesDayDateService\" />
     <WCFMetadataStorage Include="Service References\SubtractTwoNumbersService\" />
     <WCFMetadataStorage Include="Service References\WeatherService\" />
   </ItemGroup>

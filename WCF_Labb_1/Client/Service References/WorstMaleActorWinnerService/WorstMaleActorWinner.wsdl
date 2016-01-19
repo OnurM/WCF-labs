@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SetupWorstMaleActorWinners">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetupWorstMaleActorWinnersResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetActorByYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActorByYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActorByYearResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SetupWorstMaleActorWinnersSoapIn">
+    <wsdl:part name="parameters" element="tns:SetupWorstMaleActorWinners" />
+  </wsdl:message>
+  <wsdl:message name="SetupWorstMaleActorWinnersSoapOut">
+    <wsdl:part name="parameters" element="tns:SetupWorstMaleActorWinnersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActorByYearSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActorByYear" />
+  </wsdl:message>
+  <wsdl:message name="GetActorByYearSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActorByYearResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WorstMaleActorWinnerSoap">
+    <wsdl:operation name="SetupWorstMaleActorWinners">
+      <wsdl:input message="tns:SetupWorstMaleActorWinnersSoapIn" />
+      <wsdl:output message="tns:SetupWorstMaleActorWinnersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActorByYear">
+      <wsdl:input message="tns:GetActorByYearSoapIn" />
+      <wsdl:output message="tns:GetActorByYearSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WorstMaleActorWinnerSoap" type="tns:WorstMaleActorWinnerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetupWorstMaleActorWinners">
+      <soap:operation soapAction="http://tempuri.org/SetupWorstMaleActorWinners" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActorByYear">
+      <soap:operation soapAction="http://tempuri.org/GetActorByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WorstMaleActorWinnerSoap12" type="tns:WorstMaleActorWinnerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetupWorstMaleActorWinners">
+      <soap12:operation soapAction="http://tempuri.org/SetupWorstMaleActorWinners" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActorByYear">
+      <soap12:operation soapAction="http://tempuri.org/GetActorByYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WorstMaleActorWinner">
+    <wsdl:port name="WorstMaleActorWinnerSoap" binding="tns:WorstMaleActorWinnerSoap">
+      <soap:address location="http://localhost:32144/WorstMaleActorWinner.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WorstMaleActorWinnerSoap12" binding="tns:WorstMaleActorWinnerSoap12">
+      <soap12:address location="http://localhost:32144/WorstMaleActorWinner.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

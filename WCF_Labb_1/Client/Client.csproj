@@ -71,7 +71,9 @@
     <Content Include="packages.config" />
     <None Include="Service References\AddThreeNumbersService\AddThreeNumbers.wsdl" />
     <Content Include="Pages\AddThreeNumbers.aspx" />
+    <Content Include="Pages\GetAnimatedOscarWinningMovie.aspx" />
     <Content Include="Pages\GetNamesDayDate.aspx" />
+    <Content Include="Pages\GetWorstMaleActor.aspx" />
     <Content Include="Pages\SubtractTwoNumbers.aspx" />
     <Content Include="Service References\AddThreeNumbersService\Client.AddThreeNumbersService.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -87,9 +89,20 @@
     <Content Include="Service References\AddTwoNumbersService\Client.AddTwoNumbersService.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\AnimatedOscarWinnersService\AnimatedOscarWinningMovie.disco" />
+    <Content Include="Service References\AnimatedOscarWinnersService\Client.AnimatedOscarWinnersService.GetMovieByYearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\AnimatedOscarWinnersService\configuration91.svcinfo" />
+    <None Include="Service References\AnimatedOscarWinnersService\configuration.svcinfo" />
+    <None Include="Service References\AnimatedOscarWinnersService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\GetNamesDayDateService\Client.GetNamesDayDateService.GetNamesDayDateByNameResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\AnimatedOscarWinnersService\AnimatedOscarWinningMovie.wsdl" />
     <None Include="Service References\GetNamesDayDateService\GetNamesDayDateService.disco" />
     <None Include="Service References\GetNamesDayDateService\configuration91.svcinfo" />
     <None Include="Service References\GetNamesDayDateService\configuration.svcinfo" />
@@ -103,6 +116,10 @@
     <None Include="Service References\GetNamesDayDateService\GetNamesDayDateService.wsdl" />
     <None Include="Service References\SubtractTwoNumbersService\SubtractTwoNumbers.wsdl" />
     <None Include="Service References\WeatherService\Weather.wsdl" />
+    <Content Include="Service References\WorstMaleActorWinnerService\Client.WorstMaleActorWinnerService.GetActorByYearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WorstMaleActorWinnerService\WorstMaleActorWinner.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -141,6 +158,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WorstMaleActorWinnerService\WorstMaleActorWinner.disco" />
+    <None Include="Service References\WorstMaleActorWinnerService\configuration91.svcinfo" />
+    <None Include="Service References\WorstMaleActorWinnerService\configuration.svcinfo" />
+    <None Include="Service References\WorstMaleActorWinnerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -161,12 +185,26 @@
     <Compile Include="Pages\AddTwoNumbers.aspx.designer.cs">
       <DependentUpon>AddTwoNumbers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\GetAnimatedOscarWinningMovie.aspx.cs">
+      <DependentUpon>GetAnimatedOscarWinningMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GetAnimatedOscarWinningMovie.aspx.designer.cs">
+      <DependentUpon>GetAnimatedOscarWinningMovie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GetNamesDayDate.aspx.cs">
       <DependentUpon>GetNamesDayDate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\GetNamesDayDate.aspx.designer.cs">
       <DependentUpon>GetNamesDayDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GetWorstMaleActor.aspx.cs">
+      <DependentUpon>GetWorstMaleActor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GetWorstMaleActor.aspx.designer.cs">
+      <DependentUpon>GetWorstMaleActor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\PredictWeather.aspx.cs">
       <DependentUpon>PredictWeather.aspx</DependentUpon>
@@ -193,6 +231,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\AnimatedOscarWinnersService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\GetNamesDayDateService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -208,6 +251,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\WorstMaleActorWinnerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -219,9 +267,11 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AddThreeNumbersService\" />
     <WCFMetadataStorage Include="Service References\AddTwoNumbersService\" />
+    <WCFMetadataStorage Include="Service References\AnimatedOscarWinnersService\" />
     <WCFMetadataStorage Include="Service References\GetNamesDayDateService\" />
     <WCFMetadataStorage Include="Service References\SubtractTwoNumbersService\" />
     <WCFMetadataStorage Include="Service References\WeatherService\" />
+    <WCFMetadataStorage Include="Service References\WorstMaleActorWinnerService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

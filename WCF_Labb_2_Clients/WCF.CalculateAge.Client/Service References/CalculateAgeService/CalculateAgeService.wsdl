@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CalculateAge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dateOfBirth" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateAgeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateAgeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculateAgeSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateAge" />
+  </wsdl:message>
+  <wsdl:message name="CalculateAgeSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateAgeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalculateAgeServiceSoap">
+    <wsdl:operation name="CalculateAge">
+      <wsdl:input message="tns:CalculateAgeSoapIn" />
+      <wsdl:output message="tns:CalculateAgeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculateAgeServiceSoap" type="tns:CalculateAgeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateAge">
+      <soap:operation soapAction="http://tempuri.org/CalculateAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculateAgeServiceSoap12" type="tns:CalculateAgeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateAge">
+      <soap12:operation soapAction="http://tempuri.org/CalculateAge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculateAgeService">
+    <wsdl:port name="CalculateAgeServiceSoap" binding="tns:CalculateAgeServiceSoap">
+      <soap:address location="http://localhost:35944/CalculateAgeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculateAgeServiceSoap12" binding="tns:CalculateAgeServiceSoap12">
+      <soap12:address location="http://localhost:35944/CalculateAgeService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

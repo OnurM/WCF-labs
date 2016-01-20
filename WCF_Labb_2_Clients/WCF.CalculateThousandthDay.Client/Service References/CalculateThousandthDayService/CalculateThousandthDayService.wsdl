@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CalculateThousandthDayOfLife">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dateOfBirth" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateThousandthDayOfLifeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateThousandthDayOfLifeResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculateThousandthDayOfLifeSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateThousandthDayOfLife" />
+  </wsdl:message>
+  <wsdl:message name="CalculateThousandthDayOfLifeSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateThousandthDayOfLifeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalculateThousandthDayServiceSoap">
+    <wsdl:operation name="CalculateThousandthDayOfLife">
+      <wsdl:input message="tns:CalculateThousandthDayOfLifeSoapIn" />
+      <wsdl:output message="tns:CalculateThousandthDayOfLifeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculateThousandthDayServiceSoap" type="tns:CalculateThousandthDayServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateThousandthDayOfLife">
+      <soap:operation soapAction="http://tempuri.org/CalculateThousandthDayOfLife" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculateThousandthDayServiceSoap12" type="tns:CalculateThousandthDayServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateThousandthDayOfLife">
+      <soap12:operation soapAction="http://tempuri.org/CalculateThousandthDayOfLife" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculateThousandthDayService">
+    <wsdl:port name="CalculateThousandthDayServiceSoap" binding="tns:CalculateThousandthDayServiceSoap">
+      <soap:address location="http://localhost:37260/CalculateThousandthDayService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculateThousandthDayServiceSoap12" binding="tns:CalculateThousandthDayServiceSoap12">
+      <soap12:address location="http://localhost:37260/CalculateThousandthDayService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

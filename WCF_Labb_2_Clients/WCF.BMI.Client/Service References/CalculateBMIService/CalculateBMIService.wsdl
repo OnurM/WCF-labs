@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CalculateMyBMI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="heightInMeters" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateMyBMIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateMyBMIResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculateMyBMISoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateMyBMI" />
+  </wsdl:message>
+  <wsdl:message name="CalculateMyBMISoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateMyBMIResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalculateBMIServiceSoap">
+    <wsdl:operation name="CalculateMyBMI">
+      <wsdl:input message="tns:CalculateMyBMISoapIn" />
+      <wsdl:output message="tns:CalculateMyBMISoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculateBMIServiceSoap" type="tns:CalculateBMIServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateMyBMI">
+      <soap:operation soapAction="http://tempuri.org/CalculateMyBMI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculateBMIServiceSoap12" type="tns:CalculateBMIServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateMyBMI">
+      <soap12:operation soapAction="http://tempuri.org/CalculateMyBMI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculateBMIService">
+    <wsdl:port name="CalculateBMIServiceSoap" binding="tns:CalculateBMIServiceSoap">
+      <soap:address location="http://localhost:33614/CalculateBMIService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculateBMIServiceSoap12" binding="tns:CalculateBMIServiceSoap12">
+      <soap12:address location="http://localhost:33614/CalculateBMIService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

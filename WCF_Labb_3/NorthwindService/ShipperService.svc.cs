@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -31,19 +32,28 @@ namespace NorthwindService
 
         }
 
-        public void SaveShipper(MyShipper shipper)
+        public string SaveShipper(MyShipper shipper)
         {
+            if (shipper == null)
+                return "You have to enter a shipperID";
+
             using (var db = new theDB())
             {
-                db.Shippers.Add(new Shipper()
-                {
-                    ShipperID = shipper.ShipperID,
-                    CompanyName = shipper.CompanyName,
-                    Phone = shipper.Phone,
-                });
+                var theShipper = (from s in db.Shippers
+                    where s.ShipperID == shipper.ShipperID
+                    select s).FirstOrDefault();
+
+                if (theShipper == null)
+                    return "There is no shipper with that ID";
+
+                theShipper.CompanyName = shipper.CompanyName;
+                theShipper.Phone = shipper.Phone;
+                db.SaveChanges();
 
                 db.SaveChanges();
             }
+
+            return "Shipper was edited successfully";
         }
     }
 }

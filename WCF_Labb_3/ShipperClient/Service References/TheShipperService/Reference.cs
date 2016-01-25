@@ -101,10 +101,10 @@ namespace ShipperClient.TheShipperService {
         System.Threading.Tasks.Task<ShipperClient.TheShipperService.MyShipper> GetShipperByShipperIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IShipperService/SaveShipper", ReplyAction="http://tempuri.org/IShipperService/SaveShipperResponse")]
-        void SaveShipper(ShipperClient.TheShipperService.MyShipper shipper);
+        string SaveShipper(ShipperClient.TheShipperService.MyShipper shipper);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IShipperService/SaveShipper", ReplyAction="http://tempuri.org/IShipperService/SaveShipperResponse")]
-        System.Threading.Tasks.Task SaveShipperAsync(ShipperClient.TheShipperService.MyShipper shipper);
+        System.Threading.Tasks.Task<string> SaveShipperAsync(ShipperClient.TheShipperService.MyShipper shipper);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -142,11 +142,11 @@ namespace ShipperClient.TheShipperService {
             return base.Channel.GetShipperByShipperIdAsync(id);
         }
         
-        public void SaveShipper(ShipperClient.TheShipperService.MyShipper shipper) {
-            base.Channel.SaveShipper(shipper);
+        public string SaveShipper(ShipperClient.TheShipperService.MyShipper shipper) {
+            return base.Channel.SaveShipper(shipper);
         }
         
-        public System.Threading.Tasks.Task SaveShipperAsync(ShipperClient.TheShipperService.MyShipper shipper) {
+        public System.Threading.Tasks.Task<string> SaveShipperAsync(ShipperClient.TheShipperService.MyShipper shipper) {
             return base.Channel.SaveShipperAsync(shipper);
         }
     }

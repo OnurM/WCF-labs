@@ -24,6 +24,7 @@ namespace ShipperClient
 
         protected void btnGetShipper_Click(object sender, EventArgs e)
         {
+            lblError.Text = string.Empty;
             int x;
             var shipper = _service.GetShipperByShipperId(int.TryParse(tbxShipperCode.Text, out x) ? int.Parse(tbxShipperCode.Text) : x) ?? new MyShipper() {Phone = string.Empty, CompanyName = string.Empty};
 
@@ -36,18 +37,18 @@ namespace ShipperClient
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            lblError.Text = string.Empty;
             int x;
 
-            var shipper = new MyShipper {ShipperID = int.TryParse(tbxShipperId.Text, out x) ? int.Parse(tbxShipperId.Text) : x, CompanyName = tbxCompanyName.Text, Phone = tbxPhone.Text};
+            var shipper = new MyShipper { ShipperID = int.TryParse(tbxShipperId.Text, out x) ? int.Parse(tbxShipperId.Text) : x, CompanyName = tbxCompanyName.Text, Phone = tbxPhone.Text };
 
-            if (tbxShipperId.Text == "0" || tbxShipperId.Text == string.Empty || tbxCompanyName.Text == string.Empty || tbxPhone.Text == string.Empty)
-            {
-                lblError.Text = "Kan inte lägga till tomma shippers";
-                return;
-            }
+            //if (tbxShipperId.Text == "0" || tbxShipperId.Text == string.Empty || tbxCompanyName.Text == string.Empty || tbxPhone.Text == string.Empty)
+            //{
+            //    lblError.Text = "Kan inte lägga till tomma shippers";
+            //    return;
+            //}
 
-
-            _service.SaveShipper(shipper);
+            lblError.Text =  _service.SaveShipper(shipper);
 
         }
     }

@@ -5,6 +5,16 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindService", "NorthwindService\NorthwindService.csproj", "{5EAFDC6C-003D-4D2B-88FC-31B337B10927}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipperClient", "ShipperClient\ShipperClient.csproj", "{CAACEFC0-81E0-4C6B-A588-523EA7774C52}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5EAFDC6C-003D-4D2B-88FC-31B337B10927} = {5EAFDC6C-003D-4D2B-88FC-31B337B10927}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5ABD9F89-00ED-4EFA-A2E5-1887B0CA62E9}"
+	ProjectSection(SolutionItems) = preProject
+		WE-Palette.css = WE-Palette.css
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,10 @@ Global
 		{5EAFDC6C-003D-4D2B-88FC-31B337B10927}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EAFDC6C-003D-4D2B-88FC-31B337B10927}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EAFDC6C-003D-4D2B-88FC-31B337B10927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAACEFC0-81E0-4C6B-A588-523EA7774C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAACEFC0-81E0-4C6B-A588-523EA7774C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAACEFC0-81E0-4C6B-A588-523EA7774C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAACEFC0-81E0-4C6B-A588-523EA7774C52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

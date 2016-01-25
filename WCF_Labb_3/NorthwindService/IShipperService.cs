@@ -21,8 +21,11 @@ namespace NorthwindService
     [DataContract]
     public class MyShipper
     {
+        [DataMember]
         public int ShipperID { get; set; }
+        [DataMember]
         public string CompanyName { get; set; }
+        [DataMember]
         public string Phone { get; set; }
     }
 }

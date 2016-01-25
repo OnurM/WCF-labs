@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SelfService.CalculateAge
 {
-    [ServiceContract(Namespace = "http://localhost:8080/SelfService.CalculateAge")]
+    [ServiceContract(Namespace = "http://SelfService.CalculateAge")]
     interface ICalculateAge
     {
         [OperationContract]

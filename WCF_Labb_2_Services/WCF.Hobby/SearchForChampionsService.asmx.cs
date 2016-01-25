@@ -27,6 +27,7 @@ namespace WCF.Hobby
         [WebMethod]
         public void SetupDict()
         {
+            //ändra
             using (var reader = new StreamReader(@"C:\Users\Onur\Documents\Visual Studio 2015\Projects\WCF\WCF-labs\WCF_Labb_2_Services\WCF.Hobby\boxning.txt"))
             {
 

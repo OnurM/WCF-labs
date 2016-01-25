@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SelfService.ThousandDays
 {
-    [ServiceContract(Namespace = "http://localhost:8080/SelfService.ThousandDays")]
+    [ServiceContract(Namespace = "http://SelfService.ThousandDays")]
     interface ICalculateThousandthDay
     {
         [OperationContract]

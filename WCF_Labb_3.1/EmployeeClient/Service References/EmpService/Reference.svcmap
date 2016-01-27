@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="39d56b5a-7ab6-4a78-b528-eb280b4f7ef3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:5265/EmployerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EmployerService.disco" MetadataType="Disco" ID="e39fe010-c24d-4210-8247-1ba14cbfdd3f" SourceId="1" SourceUrl="http://localhost:5265/EmployerService.svc?disco" />
+    <MetadataFile FileName="EmployerService.xsd" MetadataType="Schema" ID="10acabdd-de02-47e1-800e-0e037ee636b7" SourceId="1" SourceUrl="http://localhost:5265/EmployerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EmployerService1.xsd" MetadataType="Schema" ID="77c30f5c-4122-4cb5-9d9e-c183fea61492" SourceId="1" SourceUrl="http://localhost:5265/EmployerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EmployerService2.xsd" MetadataType="Schema" ID="97e56885-922e-4b17-a579-1ff3d01f0bdd" SourceId="1" SourceUrl="http://localhost:5265/EmployerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EmployerService.wsdl" MetadataType="Wsdl" ID="2f80f801-9eae-4ed5-b1ff-611c7f7c5050" SourceId="1" SourceUrl="http://localhost:5265/EmployerService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

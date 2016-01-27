@@ -50,7 +50,6 @@ namespace NorthwindService
                 theShipper.Phone = shipper.Phone;
                 db.SaveChanges();
 
-                db.SaveChanges();
             }
 
             return "Shipper was edited successfully";

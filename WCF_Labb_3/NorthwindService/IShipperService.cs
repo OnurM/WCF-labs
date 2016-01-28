@@ -27,5 +27,5 @@ namespace NorthwindService
         public string CompanyName { get; set; }
         [DataMember]
         public string Phone { get; set; }
-    }
+    } 
 }

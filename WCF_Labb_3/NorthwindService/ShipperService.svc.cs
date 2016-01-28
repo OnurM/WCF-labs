@@ -18,41 +18,57 @@ namespace NorthwindService
         public MyShipper GetShipperByShipperId(int id)
         {
 
-            using (var db = new theDB())
+            try
             {
-                return (from s in db.Shippers
-                        where s.ShipperID == id
-                        select new MyShipper()
-                        {
-                            ShipperID = s.ShipperID,
-                            CompanyName = s.CompanyName,
-                            Phone = s.Phone
-                        }).FirstOrDefault();
+                using (var db = new theDB())
+                {
+                    var shipper = (from s in db.Shippers
+                                   where s.ShipperID == id
+                                   select new MyShipper()
+                                   {
+                                       ShipperID = s.ShipperID,
+                                       CompanyName = s.CompanyName,
+                                       Phone = s.Phone
+                                   }).FirstOrDefault();
+
+                    if (shipper == null)
+                        throw new FaultException("Could not find a Shipper with given ID");
+
+                    return shipper;
+                }
+            }
+            catch (Exception exc)
+            {
+                throw new FaultException(exc.Message);
             }
 
         }
 
         public string SaveShipper(MyShipper shipper)
         {
-            if (shipper == null)
-                return "You have to enter a shipperID";
 
-            using (var db = new theDB())
+            try
             {
-                var theShipper = (from s in db.Shippers
-                    where s.ShipperID == shipper.ShipperID
-                    select s).FirstOrDefault();
+                using (var db = new theDB())
+                {
+                    var theShipper = (from s in db.Shippers
+                                      where s.ShipperID == shipper.ShipperID
+                                      select s).FirstOrDefault();
 
-                if (theShipper == null)
-                    return "There is no shipper with that ID";
+                    if (theShipper == null)
+                        throw new FaultException("Shipper was not saved because there is no Shipepr with given ID");
 
-                theShipper.CompanyName = shipper.CompanyName;
-                theShipper.Phone = shipper.Phone;
-                db.SaveChanges();
+                    theShipper.CompanyName = shipper.CompanyName;
+                    theShipper.Phone = shipper.Phone;
+                    db.SaveChanges();
 
+                    return "Shipper was edited successfully";
+                }
             }
-
-            return "Shipper was edited successfully";
+            catch (Exception exc)
+            {
+                throw new FaultException(exc.Message);
+            }
         }
     }
 }

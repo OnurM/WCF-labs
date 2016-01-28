@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -24,31 +25,50 @@ namespace ShipperClient
 
         protected void btnGetShipper_Click(object sender, EventArgs e)
         {
-            lblError.Text = string.Empty;
-            int x;
-            var shipper = _service.GetShipperByShipperId(int.TryParse(tbxShipperCode.Text, out x) ? int.Parse(tbxShipperCode.Text) : x) ?? new MyShipper() {Phone = string.Empty, CompanyName = string.Empty};
+            try
+            {
+                lblError.Text = string.Empty;
+                int x;
+                var shipper =
+                    _service.GetShipperByShipperId(int.TryParse(tbxShipperCode.Text, out x)
+                        ? int.Parse(tbxShipperCode.Text)
+                        : x);
 
-            
 
-            tbxShipperId.Text = shipper.ShipperID != 0 ? shipper.ShipperID.ToString() : "Det finns ingen shipper med detta id";
-            tbxCompanyName.Text = shipper.CompanyName ?? string.Empty;
-            tbxPhone.Text = shipper.Phone ?? string.Empty;
+
+                tbxShipperId.Text = shipper.ShipperID.ToString();
+                tbxCompanyName.Text = shipper.CompanyName;
+                tbxPhone.Text = shipper.Phone;
+            }
+            catch (FaultException exc)
+            {
+                lblError.Text = exc.Message;
+            }
+            catch (Exception)
+            {
+                lblError.Text = "Ooopps! Something went wrong";
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            lblError.Text = string.Empty;
-            int x;
+            try
+            {
+                lblError.Text = string.Empty;
+                int x;
 
-            var shipper = new MyShipper { ShipperID = int.TryParse(tbxShipperId.Text, out x) ? int.Parse(tbxShipperId.Text) : x, CompanyName = tbxCompanyName.Text, Phone = tbxPhone.Text };
+                var shipper = new MyShipper { ShipperID = int.TryParse(tbxShipperId.Text, out x) ? int.Parse(tbxShipperId.Text) : x, CompanyName = tbxCompanyName.Text, Phone = tbxPhone.Text };
 
-            //if (tbxShipperId.Text == "0" || tbxShipperId.Text == string.Empty || tbxCompanyName.Text == string.Empty || tbxPhone.Text == string.Empty)
-            //{
-            //    lblError.Text = "Kan inte lägga till tomma shippers";
-            //    return;
-            //}
-
-            lblError.Text =  _service.SaveShipper(shipper);
+                lblError.Text = _service.SaveShipper(shipper);
+            }
+            catch (FaultException exc)
+            {
+                lblError.Text = exc.Message;
+            }
+            catch (Exception)
+            {
+                lblError.Text = "Ooopps! Something went wrong";
+            }
 
         }
     }

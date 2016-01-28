@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -14,13 +15,11 @@ namespace EmployeeService
     {
         public MyEmployee GetEmployeeInfoByEmployeeId(int employeeId)
         {
-            using (var db = new theDB())
+            try
             {
-
-                if (!db.Employees.Any(e => e.EmployeeID == employeeId))
-                    return new MyEmployee() {FirstName = "There is no employee with given EmployeeID"};
-
-                return (from e in db.Employees
+                using (var db = new theDB())
+                {
+                    var employee = (from e in db.Employees
                         where e.EmployeeID == employeeId
                         select new MyEmployee()
                         {
@@ -41,40 +40,65 @@ namespace EmployeeService
                             Title = e.Title,
                             TitleOfCourtesy = e.TitleOfCourtesy
                         }).FirstOrDefault();
+
+                    if (employee == null)
+                        throw new FaultException("There is no employee with given ID");
+
+                    return employee;
+                }
+            }
+            catch (FaultException exc)
+            {
+                throw new FaultException(exc.Message);
+            }
+            catch (Exception)
+            {
+                throw new FaultException("Something went wrong while trying to get the employee. Try again later.");
             }
         }
 
         public string UpdateEmployeeInfo(MyEmployee employee)
         {
-            DateTime x;
-            using (var db = new theDB())
+            try
             {
-                var theEmployee = (from e in db.Employees
-                                   where e.EmployeeID == employee.EmployeeId
-                                   select e).FirstOrDefault();
+                DateTime x;
+                using (var db = new theDB())
+                {
+                    var theEmployee = (from e in db.Employees
+                                       where e.EmployeeID == employee.EmployeeId
+                                       select e).FirstOrDefault();
 
-                if (theEmployee == null)
-                    return @"There is no employee with given EmployeeID";
-                
-                theEmployee.FirstName = employee.FirstName;
-                theEmployee.LastName = employee.LastName;
-                theEmployee.Address = employee.Address;
-                theEmployee.PostalCode = employee.PostalCode;
-                theEmployee.Region = employee.Region;
-                theEmployee.Title = employee.Title;
-                theEmployee.TitleOfCourtesy = employee.TitleOfCourtesy;
-                theEmployee.BirthDate = employee.BirthDate;
-                theEmployee.City = employee.City;
-                theEmployee.Country = employee.Country;
-                theEmployee.Notes = employee.Notes;
-                theEmployee.Extension = employee.Extension;
-                theEmployee.HireDate = employee.HireDate;
-                theEmployee.HomePhone = employee.HomePhone;
-                theEmployee.ReportsTo = employee.ReportsTo;
+                    if (theEmployee == null)
+                        throw new FaultException("There is no employee with given ID");
 
-                db.SaveChanges();
+                    theEmployee.FirstName = employee.FirstName;
+                    theEmployee.LastName = employee.LastName;
+                    theEmployee.Address = employee.Address;
+                    theEmployee.PostalCode = employee.PostalCode;
+                    theEmployee.Region = employee.Region;
+                    theEmployee.Title = employee.Title;
+                    theEmployee.TitleOfCourtesy = employee.TitleOfCourtesy;
+                    theEmployee.BirthDate = employee.BirthDate;
+                    theEmployee.City = employee.City;
+                    theEmployee.Country = employee.Country;
+                    theEmployee.Notes = employee.Notes;
+                    theEmployee.Extension = employee.Extension;
+                    theEmployee.HireDate = employee.HireDate;
+                    theEmployee.HomePhone = employee.HomePhone;
+                    theEmployee.ReportsTo = employee.ReportsTo;
+
+                    db.SaveChanges();
+                }
+                return "The Employee was updated successfully";
             }
-            return "The Employee was updated successfully";
+            catch (FaultException exc)
+            {
+                throw new FaultException(exc.Message);
+            }
+            catch (Exception)
+            {
+                throw new FaultException("Something went wrong while trying to save the employee. Try again later.");
+            }
         }
     }
 }

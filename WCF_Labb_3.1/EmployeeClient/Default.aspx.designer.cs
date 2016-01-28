@@ -112,6 +112,15 @@ namespace EmployeeClient {
         protected global::System.Web.UI.WebControls.TextBox tbxPostalCode;
         
         /// <summary>
+        /// RegularExpressionValidator13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator13;
+        
+        /// <summary>
         /// tbxCity control.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,15 @@ namespace EmployeeClient {
         protected global::System.Web.UI.WebControls.TextBox tbxBirthDate;
         
         /// <summary>
+        /// lblBirthDateError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBirthDateError;
+        
+        /// <summary>
         /// tbxHireDate control.
         /// </summary>
         /// <remarks>
@@ -184,6 +202,15 @@ namespace EmployeeClient {
         protected global::System.Web.UI.WebControls.TextBox tbxHireDate;
         
         /// <summary>
+        /// lblHireDateError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHireDateError;
+        
+        /// <summary>
         /// tbxNotes control.
         /// </summary>
         /// <remarks>
@@ -191,6 +218,15 @@ namespace EmployeeClient {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxNotes;
+        
+        /// <summary>
+        /// lblNotesError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNotesError;
         
         /// <summary>
         /// tbxTitle control.

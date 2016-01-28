@@ -58,19 +58,19 @@ namespace EmployeeClient
 
             if (!DateTime.TryParse(tbxBirthDate.Text, out z))
             {
-                lblInfoText.Text = "Birthdate is not in a correct format, please try again (yyyy-mm-dd)";
+                lblBirthDateError.Text = "Birthdate is not in a correct format, please try again (yyyy-mm-dd)";
                 return;
             }
 
             if (!int.TryParse(tbxReportsTo.Text, out x))
             {
-                lblInfoText.Text = "Reports To is not in a correct format, please try again (digits)";
+                lblNotesError.Text = "Reports To is not in a correct format, please try again (digits)";
                 return;
             }
 
             if (!DateTime.TryParse(tbxHireDate.Text, out z))
             {
-                lblInfoText.Text = "Hiredate is not in a correct format, please try again (yyyy-mm-dd)";
+                lblHireDateError.Text = "Hiredate is not in a correct format, please try again (yyyy-mm-dd)";
                 return;
             }
 
